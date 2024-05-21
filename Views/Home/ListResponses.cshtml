@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PartyInvites.Models.GuestResponse>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>Responses</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center p-3">
+            <h2 class="text-center">Danh sách những người tham gia báo cáo Chuyên đề: "Mùa hè xanh"</h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover table-sm">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Số điện thoại</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var r in Model)
+                    {
+                        <tr>
+                            <td>@r.Name</td>
+                            <td>@r.Email</td>
+                            <td>@r.Phone</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

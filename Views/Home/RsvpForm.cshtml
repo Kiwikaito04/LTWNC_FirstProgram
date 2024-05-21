@@ -1,0 +1,43 @@
+﻿@model PartyInvites.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h5 class="bg-primary text-white text-center p-2">Đăng ký tham gia Chuyên đề: "Mùa hè xanh"</h5>
+        <form asp-action="RsvpForm" method="post" class="mt-3">
+            <div asp-validation-summary="All" class="alert alert-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Nhập tên của bạn</label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Nhập email của bạn (sử dụng email trường cấp có đuôi @@st.huflit.edu.vn)</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">Nhập số điện thoại của bạn</label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="WillAttend" class="form-label">Bạn sẽ tham gia chứ</label>
+                <select asp-for="WillAttend" class="form-select">
+                    <option value="">Chọn câu trả lời</option>
+                    <option value="true">Có</option>
+                    <option value="false">Không</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </form>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
